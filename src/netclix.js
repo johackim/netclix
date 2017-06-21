@@ -4,6 +4,7 @@ import 'babel-polyfill';
 import phantom from 'phantom';
 import ora from 'ora';
 import debug from 'debug';
+import inquirer from 'inquirer';
 
 const log = debug('all');
 const id = process.argv[2];
