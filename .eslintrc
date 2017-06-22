@@ -5,6 +5,11 @@
         "import/extensions": ["off", "never"]
     },
     "globals": {
-        "document"
+        "document",
+        "server",
+        "assert"
+    },
+    "env": {
+        "mocha": true
     }
 }
