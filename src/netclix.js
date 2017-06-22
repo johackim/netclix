@@ -5,6 +5,7 @@ import phantom from 'phantom';
 import ora from 'ora';
 import debug from 'debug';
 import inquirer from 'inquirer';
+import { get } from './imdb';
 
 const log = debug('all');
 const id = process.argv[2];
@@ -15,6 +16,19 @@ if (!id) {
 }
 
 (async () => {
+    const search = await inquirer.prompt({
+        type: 'input',
+        name: 'search',
+        message: 'What movie are you looking for?',
+    });
+
+    const movie = await inquirer.prompt({
+        type: 'list',
+        name: 'movie',
+        message: 'Choose one of the items:',
+        choices: get(search),
+    });
+
     let attempt = 0;
     const spinner = ora('Searching streaming link').start();
 
