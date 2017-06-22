@@ -1,14 +1,13 @@
-export const get = search => [
-    {
-        name: 'Matrix',
-        value: 'tt2234239',
-    },
-    {
-        name: 'Matrix Reloaded',
-        value: 'tt9329234',
-    },
-    {
-        name: 'Matrix Revolutions',
-        value: 'tt3292394',
-    },
-];
+import Horseman from 'node-horseman';
+
+export const get = async (search) => {
+    return await new Horseman().open(`http://www.imdb.com/find?q=${search}&s=tt&ttype=ft`)
+        .evaluate(() => {
+            const movies = [].slice.call(document.querySelectorAll('.result_text a')).slice(0, 10);
+            return movies.map(movie => ({
+                name: movie.text,
+                value: movie.href.match(/tt[0-9]+/)[0],
+            }));
+        })
+        .close();
+};

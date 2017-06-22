@@ -17,7 +17,7 @@ Usage
 ---
 
 ```bash
-$ netclix <IMDB ID> # Example: netclix tt0816692
+$ netclix
 ```
 
 ## Development
