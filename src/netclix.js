@@ -8,12 +8,6 @@ import inquirer from 'inquirer';
 import { get } from './imdb';
 
 const log = debug('all');
-const id = process.argv[2];
-
-if (!id) {
-    console.error('Usage: netclix [IMDB ID]');
-    process.exit(0);
-}
 
 (async () => {
     const search = await inquirer.prompt({
@@ -24,10 +18,12 @@ if (!id) {
 
     const movie = await inquirer.prompt({
         type: 'list',
-        name: 'movie',
+        name: 'id',
         message: 'Choose one of the items:',
-        choices: get(search),
+        choices: await get(search.search),
     });
+
+    const id = movie.id;
 
     let attempt = 0;
     const spinner = ora('Searching streaming link').start();
