@@ -1,4 +1,5 @@
 import debug from 'debug';
+import phantomjs from 'phantomjs-prebuilt';
 import Horseman from 'node-horseman';
 import sleep from 'sleep-promise';
 
@@ -11,7 +12,7 @@ const vodlocker = async (id) => {
         throw new Error('No streaming link');
     }
 
-    const embed = await new Horseman().open(`http://vodlocker.to/embed?i=${id}`)
+    const embed = await new Horseman(phantomjs).open(`http://vodlocker.to/embed?i=${id}`)
         .evaluate(() => {
             if (document.getElementById('player_frame')) {
                 return document.getElementById('player_frame').innerHTML;
