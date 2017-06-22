@@ -9,10 +9,10 @@ build:
 	@ chmod +x build/netclix.js
 
 run:
-	@ ./node_modules/.bin/babel-node src/netclix.js $(filter-out $@,$(MAKECMDGOALS))
+	@ ./node_modules/.bin/babel-node src/netclix.js
 
 debug:
-	@ DEBUG=all ./node_modules/.bin/babel-node src/netclix.js $(filter-out $@,$(MAKECMDGOALS))
+	@ DEBUG=all ./node_modules/.bin/babel-node src/netclix.js
 
 deploy:
 	@ npm publish
