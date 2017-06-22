@@ -5,7 +5,7 @@ import phantom from 'phantom';
 import ora from 'ora';
 import debug from 'debug';
 import inquirer from 'inquirer';
-import { get } from './imdb';
+import imdb from './imdb';
 
 const log = debug('all');
 
@@ -20,7 +20,7 @@ const log = debug('all');
         type: 'list',
         name: 'id',
         message: 'Choose one of the items:',
-        choices: await get(search.search),
+        choices: await imdb(search.search),
     });
 
     const id = movie.id;
