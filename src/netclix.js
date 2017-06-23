@@ -26,7 +26,7 @@ import vodlocker from './vodlocker';
             process.exit(0);
         }
     } catch (e) {
-        console.error('Unknow error, retry...');
+        console.error('\nOups! Unknow error, please retry...');
         process.exit(0);
     }
 
@@ -37,7 +37,7 @@ import vodlocker from './vodlocker';
         choices,
     });
 
-    const spinner = ora('Searching streaming link').start();
+    const spinner = ora('Searching streaming link...').start();
 
     try {
         const link = await vodlocker(movie.id);
