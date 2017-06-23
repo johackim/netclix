@@ -1,6 +1,6 @@
 {
   "name": "netclix",
-  "version": "0.2.4",
+  "version": "0.2.5",
   "description": "A simple cli tool to get movie streaming link",
   "homepage": "https://github.com/stoneo/netclix",
   "author": "stoneo",
