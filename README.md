@@ -16,6 +16,13 @@ Install
 $ npm install --global netclix
 ```
 
+Arch Linux
+---
+
+```
+yaourt -S netclix
+```
+
 Usage
 ---
 
