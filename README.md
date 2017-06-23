@@ -9,6 +9,11 @@ Netclix
 
 [![asciicast](https://asciinema.org/a/125918.png)](https://asciinema.org/a/125918?t=0:01)
 
+Prerequisites
+---
+
+- [Node.js](https://nodejs.org/) v6.0+
+
 Install
 ---
 
