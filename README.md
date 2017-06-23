@@ -39,11 +39,11 @@ $ netclix
 
 Install dependencies:
 
-`make install`
+`npm install`
 
 Start project:
 
-`make run`
+`npm start`
 
 License
 ---
