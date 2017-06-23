@@ -25,3 +25,7 @@ lint:
 
 lint-fix:
 	@ ./node_modules/.bin/eslint --fix src/
+
+docker:
+	@ docker build -t netclix .
+	@ docker run -it --rm netclix
