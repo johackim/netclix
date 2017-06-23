@@ -25,7 +25,8 @@ Arch Linux
 ---
 
 ```
-yaourt -S netclix
+cower -dd netclix
+pacaur -S netclix
 ```
 
 Usage
