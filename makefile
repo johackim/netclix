@@ -1,4 +1,4 @@
-.PHONY: build
+.PHONY: build test
 
 install:
 	@ npm i
@@ -13,6 +13,9 @@ run:
 
 debug:
 	@ DEBUG=all ./node_modules/.bin/babel-node src/netclix.js
+
+test:
+	@ NODE_ENV=test ./node_modules/.bin/mocha -t 9999999 --compilers js:babel-core/register --require babel-polyfill test/setup.js test/specs/*.spec.js
 
 deploy:
 	@ npm publish
