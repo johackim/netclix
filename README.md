@@ -26,6 +26,9 @@ Arch Linux
 
 ```
 cower -dd netclix
+```
+or
+```
 pacaur -S netclix
 ```
 
