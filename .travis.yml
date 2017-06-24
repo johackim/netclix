@@ -12,3 +12,4 @@ cache:
 branches:
   only:
     - master
+    - tv
