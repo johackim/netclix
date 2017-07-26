@@ -2,15 +2,15 @@
   "name": "netclix",
   "version": "0.2.5",
   "description": "A simple cli tool to get movie streaming link",
-  "homepage": "https://github.com/stoneo/netclix",
-  "author": "stoneo",
+  "homepage": "https://github.com/ston3o/netclix",
+  "author": "ston3o",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/stoneo/netclix.git"
+    "url": "https://github.com/ston3o/netclix.git"
   },
   "bugs": {
-    "url": "https://github.com/stoneo/netclix/issues"
+    "url": "https://github.com/ston3o/netclix/issues"
   },
   "preferGlobal": true,
   "scripts": {

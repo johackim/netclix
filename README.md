@@ -2,8 +2,8 @@ Netclix
 ===
 
 [![npm version](https://badge.fury.io/js/netclix.svg)](https://badge.fury.io/js/netclix)
-[![Code Climate](https://codeclimate.com/github/stoneo/netclix/badges/gpa.svg)](https://codeclimate.com/github/stoneo/netclix)
-[![Build Status](https://travis-ci.org/stoneo/netclix.svg?branch=master)](https://travis-ci.org/stoneo/netclix/)
+[![Code Climate](https://codeclimate.com/github/ston3o/netclix/badges/gpa.svg)](https://codeclimate.com/github/ston3o/netclix)
+[![Build Status](https://travis-ci.org/ston3o/netclix.svg?branch=master)](https://travis-ci.org/ston3o/netclix/)
 
 > A simple cli tool to get movie streaming link.
 
