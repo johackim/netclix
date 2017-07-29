@@ -25,9 +25,17 @@ $ npm install --global netclix
 
 Arch Linux
 ---
+Package available at https://aur.archlinux.org/packages/netclix/
+Install with:
+```
+$ git clone https://aur.archlinux.org/netclix.git
+$ cd netclix
+$ makepkg -sri
+```
+or
 
 ```
-$ yaourt -S netclix
+$ pacaur -S netclix
 ```
 
 Usage
