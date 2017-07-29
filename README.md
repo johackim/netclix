@@ -7,6 +7,8 @@ Netclix
 
 > A simple cli tool to get movie streaming link.
 
+WARNING: Depends to vodlocker.to
+
 [![asciicast](https://asciinema.org/a/125918.png)](https://asciinema.org/a/125918?t=0:01)
 
 Prerequisites
