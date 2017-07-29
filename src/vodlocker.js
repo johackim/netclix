@@ -9,7 +9,7 @@ const maxAttempts = 5;
 
 const vodlocker = async (id) => {
     if (attempt >= maxAttempts) {
-        throw new Error('No streaming link');
+        throw new Error(`No streaming link, try to test on http://vodlocker.to/embed?i=${id}`);
     }
 
     const embed = await new Horseman(phantomjs).open(`http://vodlocker.to/embed?i=${id}`)
