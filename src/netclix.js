@@ -3,22 +3,31 @@
 import 'babel-polyfill';
 import ora from 'ora';
 import inquirer from 'inquirer';
-import imdb from './imdb';
-import vodlocker from './vodlocker';
+import getImdbId from './imdb';
+import getVodlockerLink from './vodlocker';
 
 (async () => {
+    const media = await inquirer.prompt({
+        type: 'list',
+        name: 'type',
+        message: 'Do you want a movie or show?',
+        choices: ['Movie', 'Show'],
+        filter(val) {
+            return val.toLowerCase();
+        },
+    });
     const search = await inquirer.prompt({
         type: 'input',
         name: 'search',
-        message: 'What movie are you looking for?',
+        message: 'What media are you looking for?',
         validate: x => !!x || 'Please enter a valid search.',
     });
 
     let choices;
 
     try {
-        const spinner = ora('Searching movies...').start();
-        choices = await imdb(search.search);
+        const spinner = ora('Searching media...').start();
+        choices = await getImdbId(search.search);
         spinner.stop();
 
         if (!choices.length) {
@@ -26,25 +35,46 @@ import vodlocker from './vodlocker';
             process.exit(0);
         }
     } catch (e) {
-        console.error('\nOups! Unknow error, please retry...');
+        console.error('\nOops! Unknown error, please retry...');
         process.exit(0);
     }
 
-    const movie = await inquirer.prompt({
+    const video = await inquirer.prompt({
         type: 'list',
         name: 'id',
-        message: 'Choose one of the movies:',
+        message: 'Choose one of the choices:',
         choices,
     });
 
     const spinner = ora('Searching streaming link...').start();
 
-    try {
-        const link = await vodlocker(movie.id);
-        spinner.succeed(`Your streaming link is here: ${link}`);
-    } catch (e) {
-        spinner.fail(e.message);
+    if (media.type === 'show') {
+        const season = await inquirer.prompt({
+            type: 'input',
+            name: 'season',
+            message: 'Which season?',
+        });
+
+        const episode = await inquirer.prompt({
+            type: 'input',
+            name: 'episode',
+            message: 'Which episode?',
+        });
+        try {
+            const link = await getVodlockerLink(video.id, season.season, episode.episode);
+            spinner.succeed(`Your streaming link is here: ${link}`);
+        } catch (e) {
+            spinner.fail(e.message);
+        }
+    } else {
+        try {
+            const link = await getVodlockerLink(video.id);
+            spinner.succeed(`Your streaming link is here: ${link}`);
+        } catch (e) {
+            spinner.fail(e.message);
+        }
     }
+
 
     spinner.stop();
 })();
