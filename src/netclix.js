@@ -39,13 +39,11 @@ const log = debug('all');
             spinner.fail(`Couldn't find any results matching ${search.search}`);
             process.exit(0);
         }
-
     } catch (e) {
         log(e);
         console.error('\nUnknown error, please retry.');
         process.exit(0);
     }
-
     const video = await inquirer.prompt({
         type: 'list',
         name: 'name',
@@ -75,7 +73,7 @@ const log = debug('all');
         }
     } else {
         try {
-            const link = await getVodlockerLink(media.name)
+            const link = await getVodlockerLink(media.name);
             spinner.succeed(`Your streaming link is here: ${link}`);
         } catch (e) {
             spinner.fail(e.message);
