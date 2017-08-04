@@ -32,7 +32,7 @@ import vodlocker from './vodlocker';
 
     const movie = await inquirer.prompt({
         type: 'list',
-        name: 'id',
+        name: 'name',
         message: 'Choose one of the movies:',
         choices,
     });
@@ -40,7 +40,7 @@ import vodlocker from './vodlocker';
     const spinner = ora('Searching streaming link...').start();
 
     try {
-        const link = await vodlocker(movie.id);
+        const link = await vodlocker(movie.name);
         spinner.succeed(`Your streaming link is here: ${link}`);
     } catch (e) {
         spinner.fail(e.message);
