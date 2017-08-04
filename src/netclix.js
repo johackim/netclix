@@ -3,8 +3,11 @@
 import 'babel-polyfill';
 import ora from 'ora';
 import inquirer from 'inquirer';
+import debug from 'debug';
 import imdb from './imdb';
 import vodlocker from './vodlocker';
+
+const log = debug('all');
 
 (async () => {
     const search = await inquirer.prompt({
@@ -26,6 +29,7 @@ import vodlocker from './vodlocker';
             process.exit(0);
         }
     } catch (e) {
+        log(e);
         console.error('\nOups! Unknow error, please retry...');
         process.exit(0);
     }
