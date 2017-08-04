@@ -46,7 +46,7 @@ const log = debug('all');
         process.exit(0);
     }
 
-    const media = await inquirer.prompt({
+    const video = await inquirer.prompt({
         type: 'list',
         name: 'name',
         message: 'Choose one from the choices below:',
