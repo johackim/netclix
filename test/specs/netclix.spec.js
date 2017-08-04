@@ -34,7 +34,6 @@ describe('netclix', () => {
         assert.equal(link, 'https://openload.co/embed/jZFZBHZACe8');
     });
 
-
     it('should get imdb movies', async () => {
         const search = 'Matrix';
         const media = await getImdbId(search);
@@ -48,7 +47,4 @@ describe('netclix', () => {
 
         assert.equal(media.length, 10);
     });
-
-
-    
 });
