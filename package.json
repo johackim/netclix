@@ -5,6 +5,10 @@
   "homepage": "https://github.com/ston3o/netclix",
   "author": "ston3o",
   "license": "MIT",
+  "engines": {
+      "node": "6.11.2",
+      "npm": "3.10.10"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/ston3o/netclix.git"
