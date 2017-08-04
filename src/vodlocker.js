@@ -24,23 +24,23 @@ const vodlocker = async (name, season, episode) => {
             }
 
             return null;
-	})
-	.close();
+        })
+        .close();
 
-		if (!embed) {
-			attempt += 1;
-			log(`Attempt ${attempt} ${name} ${season} ${episode}`);
-			await sleep(1000);
-			return vodlocker(name, season, episode);
-		}
-	} else {
-		embed = await new Horseman(phantomjs).open(`http://vodlocker.to/embed?i=${name}`) .evaluate(() => {
-			if (document.getElementById('player_frame')) {
-				return document.getElementById('player_frame').innerHTML;
-			}
-	
-			return null;
-		})
+        if (!embed) {
+            attempt += 1;
+            log(`Attempt ${attempt} ${name} ${season} ${episode}`);
+            await sleep(1000);
+            return vodlocker(name, season, episode);
+        }
+    } else {
+        embed = await new Horseman(phantomjs).open(`http://vodlocker.to/embed?i=${name}`) .evaluate(() => {
+            if (document.getElementById('player_frame')) {
+                return document.getElementById('player_frame').innerHTML;
+            }
+
+            return null;
+        })
         .close();
         if (!embed) {
             attempt += 1;
