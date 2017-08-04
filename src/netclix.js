@@ -13,7 +13,7 @@ const log = debug('all');
     const media = await inquirer.prompt({
         type: 'list',
         name: 'type',
-        message: 'Are you looking for a Movie or a Series?'
+        message: 'Are you looking for a Movie or a Series?',
         choices: ['Movie', 'Series'],
         filter(val) {
             return val.toLowerCase();
