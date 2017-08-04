@@ -6,9 +6,7 @@ node_js:
   - "0.10.25"
 script:
   - make test
-cache:
-  directories:
-    - node_modules
+cache: false
 branches:
   only:
     - master

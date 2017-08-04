@@ -6,7 +6,8 @@ export default async search => new Horseman(phantomjs).open(`http://www.imdb.com
         const movies = [].slice.call(document.querySelectorAll('.result_text a')).slice(0, 10);
         return movies.map(movie => ({
             name: movie.text,
-            value: movie.href.match(/tt[0-9]+/)[0],
+            value: movie.text,
+            // value: movie.href.match(/tt[0-9]+/)[0],
         }));
     })
 .close();

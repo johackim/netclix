@@ -7,12 +7,14 @@ const log = debug('all');
 let attempt = 0;
 const maxAttempts = 5;
 
-const vodlocker = async (id) => {
+const vodlocker = async (name) => {
+    const nameEncoded = encodeURIComponent(name).toLowerCase();
+
     if (attempt >= maxAttempts) {
-        throw new Error(`No streaming link, try to test on http://vodlocker.to/embed?i=${id}`);
+        throw new Error(`No streaming link, try to test on https://vodlocker.to/embed?t=${nameEncoded}`);
     }
 
-    const embed = await new Horseman(phantomjs).open(`http://vodlocker.to/embed?i=${id}`)
+    const embed = await new Horseman(phantomjs).open(`https://vodlocker.to/embed?referrer=link&t=${nameEncoded}`)
         .evaluate(() => {
             if (document.getElementById('player_frame')) {
                 return document.getElementById('player_frame').innerHTML;
@@ -24,9 +26,9 @@ const vodlocker = async (id) => {
 
     if (!embed) {
         attempt += 1;
-        log(`Attempt ${attempt} ${id}`);
+        log(`Attempt ${attempt} ${name}`);
         await sleep(1000);
-        return vodlocker(id);
+        return vodlocker(name);
     }
 
     return embed.match(/(((http[s]?|ftp):\/)?\/?([^:/\s]+)((\/\w+)*\/)([\w\-.]+[^#?\s]+)(.*)?(#[\w-]+)?)&quot;,/)[1];
