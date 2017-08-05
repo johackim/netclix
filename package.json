@@ -6,8 +6,8 @@
   "author": "ston3o",
   "license": "MIT",
   "engines": {
-      "node": "6.11.2",
-      "npm": "3.10.10"
+      "node": "~6.11",
+      "npm": "~3.10"
   },
   "repository": {
     "type": "git",
