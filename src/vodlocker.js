@@ -34,7 +34,7 @@ const vodlocker = async (name, season, episode) => {
             return vodlocker(name, season, episode);
         }
     } else {
-        embed = await new Horseman(phantomjs).open(`http://vodlocker.to/embed?i=${name}`)
+        embed = await new Horseman(phantomjs).open(`http://vodlocker.to/embed?t=${name}`)
             .evaluate(() => {
                 if (document.getElementById('player_frame')) {
                  return document.getElementById('player_frame').innerHTML;
