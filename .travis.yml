@@ -2,8 +2,8 @@ dist: trusty
 language: node_js
 node_js:
   - "6"
+  - "7"
   - "8"
-  - "0.10.25"
 script:
   - make test
 cache: false
