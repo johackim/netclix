@@ -6,14 +6,14 @@ describe('netclix', () => {
         const id = 'tt0133093';
         const link = await vodlocker(id);
 
-        assert.equal(link, 'https://docs.google.com/file/d/0B5MkJ0Jpf-poekdkOHgwNURNTlE/preview');
+        assert.equal(link, 'http://openload.co/embed/x-lB6MFyx6c/The.Matrix.1999.720p.BrRip.264.YIFY.mp4');
     });
 
     it('should get vodlocker link by name', async () => {
         const name = 'The Matrix';
         const link = await vodlocker(name);
 
-        assert.equal(link, 'https://docs.google.com/file/d/0B5MkJ0Jpf-poekdkOHgwNURNTlE/preview');
+        assert.equal(link, 'http://openload.co/embed/x-lB6MFyx6c/The.Matrix.1999.720p.BrRip.264.YIFY.mp4');
     });
 
     it('should get imdb movies', async () => {
