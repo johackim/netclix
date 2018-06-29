@@ -1,25 +1,50 @@
-import vodlocker from '../../src/vodlocker';
-import imdb from '../../src/imdb';
+import getVodlockerLink from '../../src/vodlocker';
+import getImdbId from '../../src/imdb';
 
 describe('netclix', () => {
-    it.skip('should get vodlocker link by IMDB ID', async () => {
+    it.skip('should get vodlocker link for movie by IMDB ID', async () => {
         const id = 'tt0133093';
-        const link = await vodlocker(id);
+        const link = await getVodlockerLink(id);
 
         assert.equal(link, 'http://openload.co/embed/x-lB6MFyx6c/The.Matrix.1999.720p.BrRip.264.YIFY.mp4');
     });
 
-    it('should get vodlocker link by name', async () => {
+    it('should get vodlocker link for movie by name', async () => {
         const name = 'The Matrix';
-        const link = await vodlocker(name);
+        const link = await getVodlockerLink(name);
 
         assert.equal(link, 'http://openload.co/embed/x-lB6MFyx6c/The.Matrix.1999.720p.BrRip.264.YIFY.mp4');
+    });
+
+    it.skip('should get vodlocker link for series by IMDB ID', async () => {
+        const id = 'tt013309';
+        const season = 2;
+        const episode = 4;
+        const link = await getVodlockerLink(id, season, episode);
+
+        assert.equal(link, 'https://openload.co/embed/jZFZBHZACe8');
+    });
+
+    it('should get vodlocker link for series by name', async () => {
+        const name = 'Breaking Bad';
+        const season = 2;
+        const episode = 4;
+        const link = await getVodlockerLink(name, season, episode);
+
+        assert.equal(link, 'https://openload.co/embed/jZFZBHZACe8');
     });
 
     it('should get imdb movies', async () => {
         const search = 'Matrix';
-        const movies = await imdb(search);
+        const media = await getImdbId(search);
 
-        assert.equal(movies.length, 10);
+        assert.equal(media.length, 10);
+    });
+
+    it('should get imdb series', async () => {
+        const search = 'Breaking Bad';
+        const media = await getImdbId(search);
+
+        assert.equal(media.length, 10);
     });
 });
