@@ -2,19 +2,19 @@
   "name": "netclix",
   "version": "0.2.7",
   "description": "A simple cli tool to get movie streaming link",
-  "homepage": "https://github.com/ston3o/netclix",
-  "author": "ston3o",
+  "homepage": "https://github.com/johackim/netclix",
+  "author": "johackim",
   "license": "GPL-3.0",
   "engines": {
-      "node": "~6.11",
-      "npm": "~3.10"
+    "node": "~6.11",
+    "npm": "~3.10"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/ston3o/netclix.git"
+    "url": "https://github.com/johackim/netclix.git"
   },
   "bugs": {
-    "url": "https://github.com/ston3o/netclix/issues"
+    "url": "https://github.com/johackim/netclix/issues"
   },
   "preferGlobal": true,
   "scripts": {
