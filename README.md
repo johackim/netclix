@@ -5,7 +5,6 @@ Netclix
 [![License](https://img.shields.io/badge/license-GPL%20v3%2B-yellow.svg?style=flat-square&colorA=0d7377&colorB=44c2c7)](https://raw.githubusercontent.com/johackim/netclix/master/LICENSE.txt)
 [![Build status](https://img.shields.io/travis/johackim/netclix.svg?style=flat-square&colorA=0d7377&colorB=44c2c7)](https://travis-ci.org/johackim/netclix/branches)
 [![Code Climate](https://img.shields.io/codeclimate/maintainability/johackim/netclix.svg?style=flat-square&colorA=0d7377&colorB=44c2c7)](https://codeclimate.com/github/johackim/netclix)
-[![Donate](https://img.shields.io/badge/donate-liberapay-blue.svg?style=flat-square&colorA=0d7377&colorB=44c2c7)](https://liberapay.com/johackim/donate)
 [![Downloads](https://img.shields.io/npm/dt/netclix.svg?style=flat-square&colorA=0d7377&colorB=44c2c7)](https://www.npmjs.com/package/netclix)
 
 > A simple cli tool to get movie streaming link.
