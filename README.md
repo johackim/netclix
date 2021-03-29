@@ -9,7 +9,7 @@ Netclix
 
 > A simple cli tool to get movie streaming link.
 
-WARNING: Depends to vodlocker.to
+DEPRECATED : vodlocker.to, the web service behind netclix is closed.
 
 [![asciicast](https://asciinema.org/a/125918.png)](https://asciinema.org/a/125918?t=0:01)
 
